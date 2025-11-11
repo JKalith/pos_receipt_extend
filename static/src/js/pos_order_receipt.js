@@ -6,10 +6,10 @@ import { uuidv4} from "@point_of_sale/utils";
 
 patch(PosStore.prototype, {
         async _processData(loadedData) {
-            console.log("Prueba de aparicion de "+"_processData loadedData:", loadedData);
+       
             await super._processData(loadedData);
             this.session_orders = loadedData['res.config.settings'];
-            console.log("Prueba de aparicion de "+"loadedData:", loadedData);
+            console.log("Iniciando pos")
             var json = {
                 access_token: this.access_token || '',
             };

@@ -17,11 +17,11 @@ async validateOrder(isForceValidate) {
     const order   = this.currentOrder || this.env.services.pos.selectedOrder;
     const partner = order?.get_partner?.();
 
-    console.log("Cliente ANTES de validar:", partner);
+
 
     // 2. Llamar al método original
     const res = await super.validateOrder(isForceValidate);
-console.log("Resultado de la validación del pedido:", res);
+
     // Si el POS cancela la validación (por ejemplo, pago incompleto), res puede ser false/undefined
     // if (!res) {
 
@@ -35,21 +35,17 @@ console.log("Resultado de la validación del pedido:", res);
 
 
 
-console.log("Cliente DESPUÉS de validar:", partner);
     if (partner) {
 
     this.pos.mobile = partner.mobile || "";
-    console.log(
-      "Prueba de aparicion de " + "Customer Mobile:",
-      this.pos.mobile
-    );
+
     this.pos.phone = partner.phone || "";
-    console.log("Prueba de aparicion de " + "Customer Phone:", this.pos.phone);
+    
     this.pos.email = partner.email || "";
     this.pos.vat = partner.vat || "";
     this.pos.address = partner.address || "";
     this.pos.name = partner.name || "";
-    console.log("Prueba de aparicion de " + "Customer Name:", this.pos.name);
+   
 
     return res;
   }
