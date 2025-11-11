@@ -8,6 +8,7 @@ patch(PosStore.prototype, {
         async _processData(loadedData) {
             await super._processData(loadedData);
             this.session_orders = loadedData['res.config.settings'];
+            console.log("Prueba de aparicion de "+"loadedData:", loadedData);
             var json = {
                 access_token: this.access_token || '',
             };

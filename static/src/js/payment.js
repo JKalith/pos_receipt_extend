@@ -27,7 +27,7 @@ async validateOrder(isForceValidate) {
     }
 
     const order = data[data.length - 1];
-
+console.log("Prueba de aparicion de "+"order:", order);
     if (!order) {
         console.warn("[pos_receipt_extend] Último registro vacío, omito campos extra.");
         return receipt_order;
@@ -35,11 +35,14 @@ async validateOrder(isForceValidate) {
 
     this.pos.customer_details = order.customer_details || "";
     this.pos.mobile           = order.customer_mobile || "";
+    console.log("Prueba de aparicion de "+"Customer Mobile:", this.pos.mobile);
     this.pos.phone            = order.customer_phone || "";
+    console.log("Prueba de aparicion de "+"Customer Phone:", this.pos.phone);
     this.pos.email            = order.customer_email  || "";
     this.pos.vat              = order.customer_vat    || "";
     this.pos.address          = order.customer_address || "";
     this.pos.name             = order.customer_name   || "";
+    console.log("Prueba de aparicion de "+"Customer Name:", this.pos.name);
 
     return receipt_order;
 }
