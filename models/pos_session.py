@@ -40,7 +40,7 @@ class PosSession(models.Model):
             'search_params': {
                 'fields': ['customer_name',
                            'customer_address', 
-                        #    'customer_mobile',
+                            'customer_mobile',
                            'customer_phone', 'customer_email', 'customer_vat',
                            'customer_details'],
             },

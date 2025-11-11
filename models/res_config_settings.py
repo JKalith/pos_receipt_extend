@@ -38,10 +38,10 @@ class ResConfigSettings(models.TransientModel):
                                       Help="By Enabling the customer Address "
                                            "in pos receipt",
                                       config_parameter="pos_receipt_extend.customer_address")
-#     customer_mobile = fields.Boolean(String="Customer Mobile",
-#                                      Help="By Enabling the customer mobile "
-#                                           "in pos receipt",
-#                                      config_parameter="pos_receipt_extend.customer_mobile")
+    customer_mobile = fields.Boolean(String="Customer Mobile",
+                                      Help="By Enabling the customer mobile "
+                                           "in pos receipt",
+                                      config_parameter="pos_receipt_extend.customer_mobile")
     customer_phone = fields.Boolean(String="Customer Phone",
                                     Help="By Enabling the customer phone "
                                          "in pos receipt",
