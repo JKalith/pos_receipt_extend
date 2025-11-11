@@ -13,14 +13,14 @@ patch(PaymentScreen.prototype, {
       },
 async validateOrder(isForceValidate) {
     const receipt_order = await super.validateOrder(isForceValidate);
-
+console.log("Prueba de aparicion de "+"receipt_order:", receipt_order);
     
     if (!receipt_order) {
         return receipt_order;
     }
 
     const data = this.env.services.pos.session_orders || [];
-
+console.log("Antes del if__________________________________________________");
     if (!Array.isArray(data) || data.length === 0) {
         console.warn("[pos_receipt_extend] Sin datos de session_orders, omito campos extra.");
         return receipt_order;
@@ -29,6 +29,7 @@ async validateOrder(isForceValidate) {
     const order = data[data.length - 1];
 console.log("Prueba de aparicion de "+"order:", order);
     if (!order) {
+
         console.warn("[pos_receipt_extend] Último registro vacío, omito campos extra.");
         return receipt_order;
     }
