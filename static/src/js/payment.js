@@ -23,19 +23,19 @@ async validateOrder(isForceValidate) {
     const res = await super.validateOrder(isForceValidate);
 console.log("Resultado de la validación del pedido:", res);
     // Si el POS cancela la validación (por ejemplo, pago incompleto), res puede ser false/undefined
-    if (!res) {
+    // if (!res) {
 
 
 
-      console.log("El pedido no fue validado, se cancela la operación.");
-        return res;
-    }
+    //   console.log("El pedido no fue validado, se cancela la operación.");
+    //     return res;
+    // }
 
 
 
 
 
-
+console.log("Cliente DESPUÉS de validar:", partner);
     if (partner) {
     this.pos.customer_details = partner.customer_details || "";
     this.pos.mobile = partner.customer_mobile || "";
