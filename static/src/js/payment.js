@@ -37,18 +37,18 @@ console.log("Resultado de la validación del pedido:", res);
 
 console.log("Cliente DESPUÉS de validar:", partner);
     if (partner) {
-    this.pos.customer_details = partner.customer_details || "";
-    this.pos.mobile = partner.customer_mobile || "";
+
+    this.pos.mobile = partner.mobile || "";
     console.log(
       "Prueba de aparicion de " + "Customer Mobile:",
       this.pos.mobile
     );
-    this.pos.phone = partner.customer_phone || "";
+    this.pos.phone = partner.phone || "";
     console.log("Prueba de aparicion de " + "Customer Phone:", this.pos.phone);
-    this.pos.email = partner.customer_email || "";
-    this.pos.vat = partner.customer_vat || "";
-    this.pos.address = partner.customer_address || "";
-    this.pos.name = partner.customer_name || "";
+    this.pos.email = partner.email || "";
+    this.pos.vat = partner.vat || "";
+    this.pos.address = partner.address || "";
+    this.pos.name = partner.name || "";
     console.log("Prueba de aparicion de " + "Customer Name:", this.pos.name);
 
     return res;
